@@ -127,7 +127,7 @@
 				<a href="#about" id="about" style="color: inherit; text-decoration: none;">
 					<h2>About</h2>
 				</a>
-				<p>This package is a wrapper for the <a href="https://ethermine.org/api/worker">Ethermine API</a>. It is written in TypeScript is usable in either JavaScript or TypeScript projects. It comes with typings out of the box for your convenience. In addition this package wrapping over API Endpoints, it also provides typings for all the API Endpoints. </p>
+				<p>This package is a wrapper for the <a href="https://ethermine.org/api/worker">Ethermine API</a>. It is written in TypeScript and is usable in either JavaScript or TypeScript projects. It comes with typings out of the box for your convenience. In addition to this package wrapping over API Endpoints, it also provides typings for all the API Endpoints. </p>
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
 				</a>
@@ -145,12 +145,7 @@
 
 <span class="hljs-keyword">const</span> ADDRESS = <span class="hljs-string">&#x27;0xeXXXXXXXXXXXXXX&#x27;</span>;
 
-<span class="hljs-keyword">const</span> main = <span class="hljs-keyword">async</span> () =&gt; {
-    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> Routes.miner.history(ADDRESS);
-    <span class="hljs-built_in">console</span>.log(data);
-};
-
-main();
+Routes.miner.history(ADDRESS).then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(data));
 </code></pre>
 				<p>Using Util:</p>
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Utils } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;ethermine&quot;</span>;
@@ -158,10 +153,7 @@ main();
 <span class="hljs-keyword">const</span> ADDRESS = <span class="hljs-string">&#x27;0xeXXXXXXXXXXXXXX&#x27;</span>;
 <span class="hljs-keyword">const</span> main_miner = Utils.miner(ADDRESS);
 
-<span class="hljs-keyword">const</span> main = <span class="hljs-keyword">async</span> () =&gt; {
-    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> main_miner.history();
-    <span class="hljs-built_in">console</span>.log(data);
-}
+main_miner.history().then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(data));
 </code></pre>
 				<p>In addition to the above objects, all the API Typings are exported as well for your convenience. They are formatted as such: <code>{HTTPMETHOD}{GROUP}{ACTION}</code>, so for example <code>GetPoolNetworkStats</code>. All of these have a jsdoc comment (custom) of <code>@destination</code> which will tell you what endpoint the interface corresponds to.</p>
 				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
@@ -241,7 +233,7 @@ main();
 				<div class="tsd-signature tsd-kind-icon">rest<span class="tsd-signature-symbol">:</span> <a href="../classes/ethermine.rest.html" class="tsd-signature-type">Rest</a><span class="tsd-signature-symbol"> = new RestHandler(&#x27;https://api.ethermine.org&#x27;)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L4">packages/ethermine/lib/index.ts:4</a></li>
+						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L4">packages/ethermine/lib/index.ts:4</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -254,7 +246,7 @@ main();
 				<div class="tsd-signature tsd-kind-icon">Routes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L7">packages/ethermine/lib/index.ts:7</a></li>
+						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L7">packages/ethermine/lib/index.ts:7</a></li>
 					</ul>
 				</aside>
 				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
@@ -263,7 +255,7 @@ main();
 					<div class="tsd-signature tsd-kind-icon">miner<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L8">packages/ethermine/lib/index.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L8">packages/ethermine/lib/index.ts:8</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -276,7 +268,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L11">packages/ethermine/lib/index.ts:11</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L11">packages/ethermine/lib/index.ts:11</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -299,7 +291,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L13">packages/ethermine/lib/index.ts:13</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L13">packages/ethermine/lib/index.ts:13</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -322,7 +314,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L15">packages/ethermine/lib/index.ts:15</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L15">packages/ethermine/lib/index.ts:15</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -345,7 +337,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L17">packages/ethermine/lib/index.ts:17</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L17">packages/ethermine/lib/index.ts:17</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -368,7 +360,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L19">packages/ethermine/lib/index.ts:19</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L19">packages/ethermine/lib/index.ts:19</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -388,7 +380,7 @@ main();
 					<div class="tsd-signature tsd-kind-icon">pool<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L22">packages/ethermine/lib/index.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L22">packages/ethermine/lib/index.ts:22</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -401,7 +393,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L24">packages/ethermine/lib/index.ts:24</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L24">packages/ethermine/lib/index.ts:24</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getpoolminedblocksstats.html" class="tsd-signature-type">GetPoolMinedBlocksStats</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -418,7 +410,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L26">packages/ethermine/lib/index.ts:26</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L26">packages/ethermine/lib/index.ts:26</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getpoolnetworkstats.html" class="tsd-signature-type">GetPoolNetworkStats</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -435,7 +427,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L28">packages/ethermine/lib/index.ts:28</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L28">packages/ethermine/lib/index.ts:28</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getpoolserverhashratestats.html" class="tsd-signature-type">GetPoolServerHashrateStats</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -452,7 +444,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L23">packages/ethermine/lib/index.ts:23</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L23">packages/ethermine/lib/index.ts:23</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getpoolstats.html" class="tsd-signature-type">GetPoolStats</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -466,7 +458,7 @@ main();
 					<div class="tsd-signature tsd-kind-icon">worker<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L31">packages/ethermine/lib/index.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L31">packages/ethermine/lib/index.ts:31</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -479,7 +471,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L32">packages/ethermine/lib/index.ts:32</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L32">packages/ethermine/lib/index.ts:32</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -502,7 +494,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L34">packages/ethermine/lib/index.ts:34</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L34">packages/ethermine/lib/index.ts:34</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -528,7 +520,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L36">packages/ethermine/lib/index.ts:36</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L36">packages/ethermine/lib/index.ts:36</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -552,7 +544,7 @@ main();
 				<div class="tsd-signature tsd-kind-icon">Utils<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L43">packages/ethermine/lib/index.ts:43</a></li>
+						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L43">packages/ethermine/lib/index.ts:43</a></li>
 					</ul>
 				</aside>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -565,7 +557,7 @@ main();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L45">packages/ethermine/lib/index.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L45">packages/ethermine/lib/index.ts:45</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -585,7 +577,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L47">packages/ethermine/lib/index.ts:47</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L47">packages/ethermine/lib/index.ts:47</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getminerhistory.html" class="tsd-signature-type">GetMinerHistory</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -601,7 +593,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L48">packages/ethermine/lib/index.ts:48</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L48">packages/ethermine/lib/index.ts:48</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getminerpayouts.html" class="tsd-signature-type">GetMinerPayouts</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -617,7 +609,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L49">packages/ethermine/lib/index.ts:49</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L49">packages/ethermine/lib/index.ts:49</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getminerrounds.html" class="tsd-signature-type">GetMinerRounds</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -633,7 +625,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L50">packages/ethermine/lib/index.ts:50</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L50">packages/ethermine/lib/index.ts:50</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getminersettings.html" class="tsd-signature-type">GetMinerSettings</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -649,7 +641,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L51">packages/ethermine/lib/index.ts:51</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L51">packages/ethermine/lib/index.ts:51</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getminercurrentstats.html" class="tsd-signature-type">GetMinerCurrentStats</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -670,7 +662,7 @@ main();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L54">packages/ethermine/lib/index.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L54">packages/ethermine/lib/index.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -693,7 +685,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L55">packages/ethermine/lib/index.ts:55</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L55">packages/ethermine/lib/index.ts:55</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getworkerallstatistics.html" class="tsd-signature-type">GetWorkerAllStatistics</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -709,7 +701,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L56">packages/ethermine/lib/index.ts:56</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L56">packages/ethermine/lib/index.ts:56</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getworkerhistory.html" class="tsd-signature-type">GetWorkerHistory</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -725,7 +717,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/ethermine/lib/index.ts#L57">packages/ethermine/lib/index.ts:57</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/ethermine/lib/index.ts#L57">packages/ethermine/lib/index.ts:57</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/ethermine.getworkerstatistics.html" class="tsd-signature-type">GetWorkerStatistics</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"data"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>

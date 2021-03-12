@@ -181,7 +181,7 @@
 				<a href="#about" id="about" style="color: inherit; text-decoration: none;">
 					<h2>About</h2>
 				</a>
-				<p>This package is a wrapper for the <a href="https://flexpool.io/en/docs/API/#/">Flexpool API</a>. It is written in TypeScript is usable in either JavaScript or TypeScript projects. It comes with typings out of the box for your convenience. In addition this package wrapping over API Endpoints, it also provides typings for all the API Endpoints. </p>
+				<p>This package is a wrapper for the <a href="https://flexpool.io/en/docs/API/#/">Flexpool API</a>. It is written in TypeScript and is usable in either JavaScript or TypeScript projects. It comes with typings out of the box for your convenience. In addition to this package wrapping over API Endpoints, it also provides typings for all the API Endpoints. </p>
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
 				</a>
@@ -193,18 +193,13 @@
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
-				<p>There are two exported objects in this package. <code>Routes</code> and <code>Util</code>. Routes provides a straight way to make the API requests, plain and simple (e.x. <code>Routes.miner.balance(ADDRESS)</code>), while Util will include utility methods and wrappers over all the API requests in order to simplify them. This is so you don&#39;t have to supply things like the address for every request, and instead have an object representing, for example, a specific Miner, that you can just call methods on and have the address automatically stored.</p>
+				<p>There are two exported objects in this package. <code>Routes</code> and <code>Util</code>. Routes provides a straight way to make the API requests, plain and simple (e.x. <code>Routes.miner.balance(ADDRESS)</code>), while Util will include utility methods and wrappers over the API requests that take params like <code>address</code> and <code>worker</code> in order to simplify them. This is so you don&#39;t have to supply things like the address for every request, and instead have an object representing, for example, a specific Miner, that you can just call methods on and have the address automatically stored.</p>
 				<p>Using Routes:</p>
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Routes } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;flexpool&quot;</span>;
 
 <span class="hljs-keyword">const</span> ADDRESS = <span class="hljs-string">&#x27;0xeXXXXXXXXXXXXXX&#x27;</span>;
 
-<span class="hljs-keyword">const</span> main = <span class="hljs-keyword">async</span> () =&gt; {
-    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> Routes.miner.balance(ADDRESS);
-    <span class="hljs-built_in">console</span>.log(data);
-};
-
-main();
+Routes.miner.balance(ADDRESS).then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(data));
 </code></pre>
 				<p>Using Util:</p>
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Utils } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;flexpool&quot;</span>;
@@ -212,10 +207,7 @@ main();
 <span class="hljs-keyword">const</span> ADDRESS = <span class="hljs-string">&#x27;0xeXXXXXXXXXXXXXX&#x27;</span>;
 <span class="hljs-keyword">const</span> main_miner = Utils.miner(ADDRESS);
 
-<span class="hljs-keyword">const</span> main = <span class="hljs-keyword">async</span> () =&gt; {
-    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> main_miner.balance();
-    <span class="hljs-built_in">console</span>.log(data);
-}
+main_miner.balance().then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(data))
 </code></pre>
 				<p>In addition to the above objects, all the API Typings are exported as well for your convenience. They are formatted as such: <code>{HTTPMETHOD}{GROUP}{ACTION}</code>, so for example <code>GetMinerCurrentStats</code>. All of these have a jsdoc comment (custom) of <code>@destination</code> which will tell you what endpoint the interface corresponds to.</p>
 				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
@@ -313,7 +305,7 @@ main();
 				<div class="tsd-signature tsd-kind-icon">rest<span class="tsd-signature-symbol">:</span> <a href="../classes/flexpool.rest.html" class="tsd-signature-type">Rest</a><span class="tsd-signature-symbol"> = new RestHandler(&#x27;https://flexpool.io/api/v1&#x27;)</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L4">packages/flexpool/lib/index.ts:4</a></li>
+						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L4">packages/flexpool/lib/index.ts:4</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -326,7 +318,7 @@ main();
 				<div class="tsd-signature tsd-kind-icon">Routes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L7">packages/flexpool/lib/index.ts:7</a></li>
+						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L7">packages/flexpool/lib/index.ts:7</a></li>
 					</ul>
 				</aside>
 				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
@@ -335,7 +327,7 @@ main();
 					<div class="tsd-signature tsd-kind-icon">miner<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L8">packages/flexpool/lib/index.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L8">packages/flexpool/lib/index.ts:8</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -348,7 +340,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L9">packages/flexpool/lib/index.ts:9</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L9">packages/flexpool/lib/index.ts:9</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -371,7 +363,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L33">packages/flexpool/lib/index.ts:33</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L33">packages/flexpool/lib/index.ts:33</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -394,7 +386,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L31">packages/flexpool/lib/index.ts:31</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L31">packages/flexpool/lib/index.ts:31</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -420,7 +412,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L23">packages/flexpool/lib/index.ts:23</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L23">packages/flexpool/lib/index.ts:23</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -443,7 +435,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L11">packages/flexpool/lib/index.ts:11</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L11">packages/flexpool/lib/index.ts:11</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -466,7 +458,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L13">packages/flexpool/lib/index.ts:13</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L13">packages/flexpool/lib/index.ts:13</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -489,7 +481,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L35">packages/flexpool/lib/index.ts:35</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L35">packages/flexpool/lib/index.ts:35</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -512,7 +504,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L37">packages/flexpool/lib/index.ts:37</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L37">packages/flexpool/lib/index.ts:37</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -535,7 +527,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L27">packages/flexpool/lib/index.ts:27</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L27">packages/flexpool/lib/index.ts:27</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -558,7 +550,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L25">packages/flexpool/lib/index.ts:25</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L25">packages/flexpool/lib/index.ts:25</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -584,7 +576,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L29">packages/flexpool/lib/index.ts:29</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L29">packages/flexpool/lib/index.ts:29</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -607,7 +599,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L39">packages/flexpool/lib/index.ts:39</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L39">packages/flexpool/lib/index.ts:39</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -630,7 +622,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L15">packages/flexpool/lib/index.ts:15</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L15">packages/flexpool/lib/index.ts:15</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -653,7 +645,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L43">packages/flexpool/lib/index.ts:43</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L43">packages/flexpool/lib/index.ts:43</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -676,7 +668,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L41">packages/flexpool/lib/index.ts:41</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L41">packages/flexpool/lib/index.ts:41</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -699,7 +691,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L17">packages/flexpool/lib/index.ts:17</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L17">packages/flexpool/lib/index.ts:17</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -722,7 +714,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L19">packages/flexpool/lib/index.ts:19</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L19">packages/flexpool/lib/index.ts:19</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -742,7 +734,7 @@ main();
 					<div class="tsd-signature tsd-kind-icon">pool<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L46">packages/flexpool/lib/index.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L46">packages/flexpool/lib/index.ts:46</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -755,7 +747,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L51">packages/flexpool/lib/index.ts:51</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L51">packages/flexpool/lib/index.ts:51</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getpoolaverageluckroundtime.html" class="tsd-signature-type">GetPoolAverageLuckRoundTime</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -772,7 +764,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L57">packages/flexpool/lib/index.ts:57</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L57">packages/flexpool/lib/index.ts:57</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getpoolblockcount.html" class="tsd-signature-type">GetPoolBlockCount</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -789,7 +781,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L55">packages/flexpool/lib/index.ts:55</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L55">packages/flexpool/lib/index.ts:55</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -812,7 +804,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L64">packages/flexpool/lib/index.ts:64</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L64">packages/flexpool/lib/index.ts:64</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getpoolcurrentluck.html" class="tsd-signature-type">GetPoolCurrentLuck</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -829,7 +821,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L63">packages/flexpool/lib/index.ts:63</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L63">packages/flexpool/lib/index.ts:63</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getpoolhashrate.html" class="tsd-signature-type">GetPoolHashrate</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -846,7 +838,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L47">packages/flexpool/lib/index.ts:47</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L47">packages/flexpool/lib/index.ts:47</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getpoolhashratechart.html" class="tsd-signature-type">GetPoolHashrateChart</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -863,7 +855,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L53">packages/flexpool/lib/index.ts:53</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L53">packages/flexpool/lib/index.ts:53</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getpoolminersonline.html" class="tsd-signature-type">GetPoolMinersOnline</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -880,7 +872,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L61">packages/flexpool/lib/index.ts:61</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L61">packages/flexpool/lib/index.ts:61</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getpooltopdonors.html" class="tsd-signature-type">GetPoolTopDonors</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -897,7 +889,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L59">packages/flexpool/lib/index.ts:59</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L59">packages/flexpool/lib/index.ts:59</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getpooltopminers.html" class="tsd-signature-type">GetPoolTopMiners</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -914,7 +906,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L49">packages/flexpool/lib/index.ts:49</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L49">packages/flexpool/lib/index.ts:49</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getpoolworkersonline.html" class="tsd-signature-type">GetPoolWorkersOnline</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -928,7 +920,7 @@ main();
 					<div class="tsd-signature tsd-kind-icon">worker<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L67">packages/flexpool/lib/index.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L67">packages/flexpool/lib/index.ts:67</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -941,7 +933,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L74">packages/flexpool/lib/index.ts:74</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L74">packages/flexpool/lib/index.ts:74</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -967,7 +959,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L68">packages/flexpool/lib/index.ts:68</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L68">packages/flexpool/lib/index.ts:68</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -993,7 +985,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L70">packages/flexpool/lib/index.ts:70</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L70">packages/flexpool/lib/index.ts:70</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1019,7 +1011,7 @@ main();
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L72">packages/flexpool/lib/index.ts:72</a></li>
+										<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L72">packages/flexpool/lib/index.ts:72</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1043,7 +1035,7 @@ main();
 				<div class="tsd-signature tsd-kind-icon">Utils<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L79">packages/flexpool/lib/index.ts:79</a></li>
+						<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L79">packages/flexpool/lib/index.ts:79</a></li>
 					</ul>
 				</aside>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -1056,7 +1048,7 @@ main();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L81">packages/flexpool/lib/index.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L81">packages/flexpool/lib/index.ts:81</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1076,7 +1068,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L82">packages/flexpool/lib/index.ts:82</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L82">packages/flexpool/lib/index.ts:82</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerbalance.html" class="tsd-signature-type">GetMinerBalance</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1092,7 +1084,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L94">packages/flexpool/lib/index.ts:94</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L94">packages/flexpool/lib/index.ts:94</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerblockcount.html" class="tsd-signature-type">GetMinerBlockCount</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1108,7 +1100,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L93">packages/flexpool/lib/index.ts:93</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L93">packages/flexpool/lib/index.ts:93</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerblocks.html" class="tsd-signature-type">GetMinerBlocks</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1124,7 +1116,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L89">packages/flexpool/lib/index.ts:89</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L89">packages/flexpool/lib/index.ts:89</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerchart.html" class="tsd-signature-type">GetMinerChart</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1140,7 +1132,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L83">packages/flexpool/lib/index.ts:83</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L83">packages/flexpool/lib/index.ts:83</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminercurrentstats.html" class="tsd-signature-type">GetMinerCurrentStats</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1156,7 +1148,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L84">packages/flexpool/lib/index.ts:84</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L84">packages/flexpool/lib/index.ts:84</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerdailystats.html" class="tsd-signature-type">GetMinerDailyStats</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1172,7 +1164,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L95">packages/flexpool/lib/index.ts:95</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L95">packages/flexpool/lib/index.ts:95</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerdetails.html" class="tsd-signature-type">GetMinerDetails</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1188,7 +1180,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L96">packages/flexpool/lib/index.ts:96</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L96">packages/flexpool/lib/index.ts:96</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerestimateddailyrevenue.html" class="tsd-signature-type">GetMinerEstimatedDailyRevenue</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1204,7 +1196,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L91">packages/flexpool/lib/index.ts:91</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L91">packages/flexpool/lib/index.ts:91</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerpaymentcount.html" class="tsd-signature-type">GetMinerPaymentCount</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1220,7 +1212,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L90">packages/flexpool/lib/index.ts:90</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L90">packages/flexpool/lib/index.ts:90</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerpayments.html" class="tsd-signature-type">GetMinerPayments</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1236,7 +1228,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L92">packages/flexpool/lib/index.ts:92</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L92">packages/flexpool/lib/index.ts:92</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerpaymentchart.html" class="tsd-signature-type">GetMinerPaymentChart</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1252,7 +1244,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L97">packages/flexpool/lib/index.ts:97</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L97">packages/flexpool/lib/index.ts:97</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerroundshare.html" class="tsd-signature-type">GetMinerRoundShare</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1268,7 +1260,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L85">packages/flexpool/lib/index.ts:85</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L85">packages/flexpool/lib/index.ts:85</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerstats.html" class="tsd-signature-type">GetMinerStats</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1284,7 +1276,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L99">packages/flexpool/lib/index.ts:99</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L99">packages/flexpool/lib/index.ts:99</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminertotaldonated.html" class="tsd-signature-type">GetMinerTotalDonated</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1300,7 +1292,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L98">packages/flexpool/lib/index.ts:98</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L98">packages/flexpool/lib/index.ts:98</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminertotalpaid.html" class="tsd-signature-type">GetMinerTotalPaid</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1316,7 +1308,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L86">packages/flexpool/lib/index.ts:86</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L86">packages/flexpool/lib/index.ts:86</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerworkercount.html" class="tsd-signature-type">GetMinerWorkerCount</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1332,7 +1324,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L87">packages/flexpool/lib/index.ts:87</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L87">packages/flexpool/lib/index.ts:87</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getminerworkers.html" class="tsd-signature-type">GetMinerWorkers</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1353,7 +1345,7 @@ main();
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L102">packages/flexpool/lib/index.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L102">packages/flexpool/lib/index.ts:102</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1376,7 +1368,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L106">packages/flexpool/lib/index.ts:106</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L106">packages/flexpool/lib/index.ts:106</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getworkerchart.html" class="tsd-signature-type">GetWorkerChart</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1392,7 +1384,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L103">packages/flexpool/lib/index.ts:103</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L103">packages/flexpool/lib/index.ts:103</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getworker.html" class="tsd-signature-type">GetWorker</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1408,7 +1400,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L104">packages/flexpool/lib/index.ts:104</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L104">packages/flexpool/lib/index.ts:104</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getworkerdaily.html" class="tsd-signature-type">GetWorkerDaily</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1424,7 +1416,7 @@ main();
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/00fe9de/packages/flexpool/lib/index.ts#L105">packages/flexpool/lib/index.ts:105</a></li>
+													<li>Defined in <a href="https://github.com/zaida04/mining-pool-wrappers/blob/3b6010f/packages/flexpool/lib/index.ts#L105">packages/flexpool/lib/index.ts:105</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/flexpool.getworkerstats.html" class="tsd-signature-type">GetWorkerStats</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"result"</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
